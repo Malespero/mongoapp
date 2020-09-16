@@ -11,4 +11,3 @@ mongoClient.connect(function(err, client){
     // взаимодействие с базой данных
     client.close();
 });
-
