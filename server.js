@@ -9,11 +9,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err)
                         
-    // Make sure you add the database name and not the collection name
     const db = database.db("note-api")
+    collection = db.collection('notes')
     require('./app/routes')(app, db);
 
     app.listen(port, () => {
         console.log('Server is running on port ' + port);
       });
     })
+    //5f62d4ada844e212d20ee8d3
+    //config contains only 1 db.js config with link 
+    //module.exports = {
+    //url : "mongodb+srv://newadmin-0:<pass>@cluster0.nig0o.mongodb.net/Cluster0?retryWrites=true&w=majority"
+    //};
